@@ -1,2 +1,3 @@
 # textParsing
-Second Task - parsing text
+Second home work - parsing text
+task №2
