@@ -28,12 +28,12 @@ public class TestSentencesParser {
     @Test(expected = NullOrEmptyTextForParsingException.class)
     public void shouldThrowNullOrEmptyTextForParsingException_whenPassNullToParse() throws NullOrEmptyTextForParsingException {
         SentencesParser sentencesParser = new SentencesParser();
-        ComponentParsingText actualComponentParsingText = sentencesParser.parse(null);
+        sentencesParser.parse(null);
     }
 
     @Test(expected = NullOrEmptyTextForParsingException.class)
     public void shouldThrowNullOrEmptyTextForParsingException_whenPassEmptyTextToParse() throws NullOrEmptyTextForParsingException {
         SentencesParser sentencesParser = new SentencesParser();
-        ComponentParsingText actualComponentParsingText = sentencesParser.parse("");
+        sentencesParser.parse("");
     }
 }

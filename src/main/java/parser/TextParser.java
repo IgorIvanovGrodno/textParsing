@@ -36,7 +36,7 @@ public class TextParser extends AbstractParser {
 
         while (matcherParagraphListing.find()) {
             buffer = matcherParagraphListing.group();
-
+            matcherParagraph.reset(buffer);
             if (matcherParagraph.matches()) {
                 textComposite.addComponent(getNextParser(LOGGER).parse(buffer));
             } else {

@@ -6,14 +6,14 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mockito;
-import util.UtilParsingText;
+import util.UtilSortSentences;
 
 import java.util.List;
 
 import static util.UtilTest.getListSentences;
 import static util.UtilTest.getListWithNullSentence;
 
-public class TestUtilParsingText {
+public class TestUtilSortSentences {
     private static CompositeParsingText paragraphCompositeParsingTextSpy;
     private static CompositeParsingText paragraphCompositeParsingTextWithNullSentenceSpy;
 
@@ -28,17 +28,17 @@ public class TestUtilParsingText {
 
     @Test(expected = NullCompositeParsingTextException.class)
     public void shouldThrowNullCompositeParsingText_whenPassNullToSortSentencesByCountWords() throws NullCompositeParsingTextException {
-        UtilParsingText.sortSentencesByCountWords(null);
+        UtilSortSentences.sortSentencesByCountWords(null);
     }
 
     @Test(expected = NullCompositeParsingTextException.class)
     public void shouldThrowNullCompositeParsingText_whenPassComponentWhichContainsNullChildComponentToSortSentencesByCountWords() throws NullCompositeParsingTextException {
-        UtilParsingText.sortSentencesByCountWords(paragraphCompositeParsingTextWithNullSentenceSpy);
+        UtilSortSentences.sortSentencesByCountWords(paragraphCompositeParsingTextWithNullSentenceSpy);
     }
 
     @Test
     public void shouldReturnSortedListSentencesByCountWords_whenPassParagraph() throws NullCompositeParsingTextException {
-        List<ComponentParsingText> actualList =UtilParsingText.sortSentencesByCountWords(paragraphCompositeParsingTextSpy);
+        List<ComponentParsingText> actualList = UtilSortSentences.sortSentencesByCountWords(paragraphCompositeParsingTextSpy);
         Assert.assertEquals("    Java is very cool!", actualList.get(0).getText());
         Assert.assertEquals(" Spring is very cool too!\n", actualList.get(1).getText());
         Assert.assertEquals("    Hibernate is very useful tool for job.\n", actualList.get(2).getText());

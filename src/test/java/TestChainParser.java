@@ -28,12 +28,12 @@ public class TestChainParser {
     @Test(expected = NullOrEmptyTextForParsingException.class)
     public void shouldThrowNullOrEmptyTextForParsingException_whenPassNullToParse() throws NullOrEmptyTextForParsingException, NotFoundParserException {
         ChainParser chainParser = new ChainParser();
-        ComponentParsingText actualText = chainParser.parse(null);
+       chainParser.parse(null);
     }
 
     @Test(expected = NullOrEmptyTextForParsingException.class)
     public void shouldThrowNullOrEmptyTextForParsingException_whenPassEmptyTextToParse() throws NullOrEmptyTextForParsingException, NotFoundParserException {
         ChainParser chainParser = new ChainParser();
-        ComponentParsingText actualText = chainParser.parse("");
+        chainParser.parse("");
     }
 }

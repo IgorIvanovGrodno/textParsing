@@ -33,18 +33,18 @@ public class TestTextParser {
     @Test(expected = NotFoundParserException.class)
     public void shouldThrowNotFoundParserException_whenNotSetNextParser() throws NullOrEmptyTextForParsingException, NotFoundParserException {
         TextParser textParser = new TextParser();
-        ComponentParsingText actualText = textParser.parse("    Java is very cool!\n");
+        textParser.parse("    Java is very cool!\n");
     }
 
     @Test(expected = NullOrEmptyTextForParsingException.class)
     public void shouldThrowNullOrEmptyTextForParsingException_whenPassNullToParse() throws NullOrEmptyTextForParsingException, NotFoundParserException {
         TextParser textParser = new TextParser();
-        ComponentParsingText actualText = textParser.parse(null);
+        textParser.parse(null);
     }
 
     @Test(expected = NullOrEmptyTextForParsingException.class)
     public void shouldThrowNullOrEmptyTextForParsingException_whenPassEmptyTextToParse() throws NullOrEmptyTextForParsingException, NotFoundParserException {
         TextParser textParser = new TextParser();
-        ComponentParsingText actualText = textParser.parse("");
+        textParser.parse("");
     }
 }

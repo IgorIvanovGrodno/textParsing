@@ -29,18 +29,18 @@ public class TestParagraphParser {
     @Test(expected = NotFoundParserException.class)
     public void shouldThrowNotFoundParserException_whenNotSetNextParser() throws NullOrEmptyTextForParsingException, NotFoundParserException {
         ParagraphParser paragraphParser = new ParagraphParser();
-        ComponentParsingText actualComponentParsingText = paragraphParser.parse("Java is very cool!");
+        paragraphParser.parse("Java is very cool!");
     }
 
     @Test(expected = NullOrEmptyTextForParsingException.class)
     public void shouldThrowNullOrEmptyTextForParsingException_whenPassNullToParse() throws NullOrEmptyTextForParsingException, NotFoundParserException {
         ParagraphParser paragraphParser = new ParagraphParser();
-        ComponentParsingText actualComponentParsingText = paragraphParser.parse(null);
+         paragraphParser.parse(null);
     }
 
     @Test(expected = NullOrEmptyTextForParsingException.class)
     public void shouldThrowNullOrEmptyTextForParsingException_whenPassEmptyTextToParse() throws NullOrEmptyTextForParsingException, NotFoundParserException {
         ParagraphParser paragraphParser = new ParagraphParser();
-        ComponentParsingText actualComponentParsingText = paragraphParser.parse("");
+         paragraphParser.parse("");
     }
 }
